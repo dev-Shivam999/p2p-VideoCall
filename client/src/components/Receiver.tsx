@@ -64,6 +64,8 @@ export const Receiver = () => {
 
     return (
         <div>
+
+
             
             <h2>Receiver</h2>
             <video ref={videoRef} width={400} height={400} autoPlay controls playsInline muted></video>
