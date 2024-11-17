@@ -79,9 +79,10 @@ export const Sender = () => {
                     videoRef.current.srcObject = stream;
                     videoRef.current.play();
                 }
-
+              
                 stream.getTracks().forEach((track) => {
                     peerConnection.addTrack(track, stream);
+            
                 });
             })
             .catch((error) => {
@@ -93,7 +94,7 @@ export const Sender = () => {
         <div>
             <h2>Sender</h2>
             <button onClick={initiateConnection}>Start Call</button>
-            <video ref={videoRef} width={400} height={400} autoPlay controls muted playsInline></video>
+            <video ref={videoRef} width={400} height={400} muted></video>
         </div>
     );
 };

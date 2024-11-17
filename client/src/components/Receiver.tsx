@@ -17,7 +17,7 @@ export const Receiver = () => {
 
         const pc = new RTCPeerConnection({
             iceServers: [
-                { urls: "stun:stun.l.google.com:19302" }, // Public STUN server
+                { urls: "stun:stun.l.google.com:19302" }, 
             ],
         });
 
@@ -27,11 +27,10 @@ export const Receiver = () => {
                     videoRef.current.srcObject = stream;
                 }
               
-                console.log(event.track.kind);
 
                 if (event.track.kind == "audio" && audioRef.current) {
                     audioRef.current.srcObject = stream;
-                 console.log(stream);
+                 
                  
                 }
             });
@@ -68,8 +67,8 @@ export const Receiver = () => {
 
             
             <h2>Receiver</h2>
-            <video ref={videoRef} width={400} height={400} autoPlay controls playsInline muted></video>
-            <audio ref={audioRef} controls autoPlay playsInline></audio>
+            <video ref={videoRef} width={400} height={400} muted autoPlay ></video>
+            <audio ref={audioRef} autoPlay controls></audio>
         </div>
     );
 };
