@@ -25,6 +25,7 @@ export const Receiver = () => {
             event.streams.forEach((stream) => {
                 if (event.track.kind === "video" && videoRef.current) {
                     videoRef.current.srcObject = stream;
+                
                 }
               
 
